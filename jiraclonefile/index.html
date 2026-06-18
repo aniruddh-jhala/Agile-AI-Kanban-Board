@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Agile Kanban Board (Jira AI Upgrade)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="logo-area">
+                <div class="jira-icon">🚀</div>
+                <div>
+                    <h1>Agile Sprint Board</h1>
+                    <p class="subtitle">Product Management & Issue Tracking Dashboard</p>
+                </div>
+            </div>
+            <div class="add-task-wrapper">
+                <input type="text" id="task-input" placeholder="⚡ Enter user story, bug, or epic task...">
+                <button id="add-task-btn">Create Issue</button>
+                <button id="ai-task-btn" style="background: linear-gradient(135deg, #a855f7, #3b82f6); color: white; margin-left: 8px;">✨ AI Generate</button>
+            </div>
+        </header>
+
+        <main class="board-container">
+            <div class="column" id="to-do" ondragover="allowDrop(event)" ondrop="drop(event, 'to-do')">
+                <div class="column-header todo-hdr">
+                    <span>📋 TO-DO / BACKLOG</span>
+                    <span class="task-count" id="todo-count">0</span>
+                </div>
+                <div class="task-list" id="todo-list"></div>
+            </div>
+
+            <div class="column" id="in-progress" ondragover="allowDrop(event)" ondrop="drop(event, 'in-progress')">
+                <div class="column-header progress-hdr">
+                    <span>⚡ IN PROGRESS</span>
+                    <span class="task-count" id="progress-count">0</span>
+                </div>
+                <div class="task-list" id="progress-list"></div>
+            </div>
+
+            <div class="column" id="done" ondragover="allowDrop(event)" ondrop="drop(event, 'done')">
+                <div class="column-header done-hdr">
+                    <span>✅ DONE</span>
+                    <span class="task-count" id="done-count">0</span>
+                </div>
+                <div class="task-list" id="done-list"></div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
